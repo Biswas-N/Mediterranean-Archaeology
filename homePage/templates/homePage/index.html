@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>PDF Upload - Grkology</title>
+{%endblock%}
+
+{% block nav %}
+<li class="nav-item">
+    <a href="/" class="nav-link">
+        Home
+    </a>
+</li>
+<li class="active nav-item">
+    <a href="/upload/" class="nav-link">
+        Data Upload
+    </a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="py-5 text-center">
+        <p class="lead">Please fill the form and upload PDF to get started.</p>
+    </div>
+
+    <!-- PDF file upload section -->
+    <div class="col">
+        <h4 class="mb-3">Data PDF</h4>
+        <hr class="mb-3">
+        <form method="post" action="{% url 'upload' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="mb-3" type="file" name="file">
+            <div class="row">
+                <div class="col mb-3 form-group">
+                    <label for="start_page" class="bmd-label-floating">Start Page Number</label>
+                    <input type="text" class="form-control" id="start_page" name="start_page" required>
+                </div>
+                <div class="col mb-3 form-group">
+                    <label for="end_page" class="bmd-label-floating">End Page Number</label>
+                    <input type="text" class="form-control" id="end_page" name="end_page" required>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </form>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2018 Team-XD</p>
+        </footer>
+    </div>
+</div>
+{% endblock %}

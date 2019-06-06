@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Images Upload - Grkology</title>
+{%endblock%}
+
+{% block nav %}
+<li class="nav-item">
+    <a href="/" class="nav-link">
+        Home
+    </a>
+</li>
+<li class="active nav-item">
+    <a href="/upload/" class="nav-link">
+        Data Upload
+    </a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="py-5 text-center">
+        <p class="lead">Please fill the form and upload images to get started.</p>
+    </div>
+
+    <!-- PDF file upload section -->
+    <div class="col">
+        <h4 class="mb-3">Images</h4>
+        <hr class="mb-3">
+        {# 1. BUTTON TO TRIGGER THE ACTION #}
+        <button type="button" class="btn btn-primary js-upload-photos">
+            Upload photos
+        </button>
+
+        {# 2. FILE INPUT TO BE USED BY THE PLUG-IN #}
+        <input id="fileupload" type="file" name="image" multiple style="display: none;" data-url="{% url 'images' %}"
+            data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+
+        {# 3. TABLE TO DISPLAY THE UPLOADED PHOTOS #}
+        <table id="gallery" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Photos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for photo in photos %}
+                <tr>
+                    <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2018 Team-XD</p>
+        </footer>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'assets/js/vendor/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'assets/js/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'assets/js/jquery.fileupload.js' %}"></script>
+<script>
+    $(function () {
+        /* 1. OPEN THE FILE EXPLORER WINDOW */
+        $(".js-upload-photos").click(function () {
+            self.name = 'Uploading';
+            $("#fileupload").click();
+        });
+
+        /* 2. INITIALIZE THE FILE UPLOAD COMPONENT */
+        $("#fileupload").fileupload({
+            dataType: 'json',
+            done: function (e, data) {  /* 3. PROCESS THE RESPONSE FROM THE SERVER */
+                if (data.result.is_valid) {
+                    $("#gallery tbody").prepend(
+                        "<tr><td><a href='" + data.result.url + "'>" + data.result.name + "</a></td></tr>"
+                    )
+                }
+            }
+        });
+
+    });
+</script>
+{% endblock %}
