@@ -8,7 +8,7 @@ Mediterranean Archaeology project (Med-Arch) is a Python's Django and Bootstrap 
 * [Hema Priya Movva](https://www.linkedin.com/in/hema-priya-08521681/)
 * [Krishna Mohan Chiluveru](https://www.linkedin.com/in/krishna-chiluveru-61314915b/)
 
-#### Original Project Report
+### Original Project Report
 Please check the [original project report](https://docs.biswas.coffee/Mediterranean-Archaeology.pdf) summited at the university.
 
 ### Technologies
@@ -46,13 +46,13 @@ Using Pip
 $ pip install -r requirements.txt
 ```
 
-Create your database tables (Using Django migrations)
+##### Create your database tables (Using Django migrations)
 > _For this, you need postgres installed in your PC/MAC. You can either use native software or [Docker image](https://hub.docker.com/_/postgres)_
 ```sh
 $ py manage.py migrate
 ```
 
-Start you dev server on port 8888
+##### Start you dev server on port 8888
 ```sh
 $ py manage.py runserver 0.0.0.0:8888
 ```
@@ -60,4 +60,4 @@ $ py manage.py runserver 0.0.0.0:8888
 License
 ----
 
-MIT
+GPL-3.0
