@@ -4,9 +4,9 @@
 Mediterranean Archaeology project (Med-Arch) is a Python's Django and Bootstrap based application, which extracts data from a large set of images and a large pdf, then stores the data in a Postgres database and displays the records.
 
 #### Team
-* Biswas Nandamuri
-* Hema Priya Movva
-* Krishna Mohan Chiluveru
+* [Biswas Nandamuri](https://www.linkedin.com/in/biswas-n/)
+* [Hema Priya Movva](https://www.linkedin.com/in/hema-priya-08521681/)
+* [Krishna Mohan Chiluveru](https://www.linkedin.com/in/krishna-chiluveru-61314915b/)
 
 #### Original Project Report
 Please check the [original project report](https://docs.biswas.coffee/Mediterranean-Archaeology.pdf) summited at the university.
