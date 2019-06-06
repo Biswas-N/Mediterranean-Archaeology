@@ -15,13 +15,14 @@ Please check the [original project report](https://docs.biswas.coffee/Mediterran
 
 Med-Arch uses a number of open source projects to work properly:
 
-* [Django] - awesome web-based text editor
-* [SQLAlchemy] - Markdown parser done right. Fast and easy to extend.
-* [Bootstrap] - great UI boilerplate for modern web apps
+* [Django](https://www.djangoproject.com/) - Python's high-level web framework.
+* [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy/) - SQL Toolkit and Object Relational Mapper
+* [Bootstrap](https://getbootstrap.com/) - great UI boilerplate for modern web apps
+* [Pdfminer](https://github.com/pdfminer/pdfminer.six) - Tool for extracting information from PDF documents
 
 ### Installation
 
-Dillinger requires [Python](https://nodejs.org/) v4+ to run.
+Med-Arch requires [Python](https://www.python.org/) v3 to run.
 
 ##### Clone the repository.
 
