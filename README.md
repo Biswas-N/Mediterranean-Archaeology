@@ -46,7 +46,7 @@ $ pip install -r requirements.txt
 ```
 
 Create your database tables (Using Django migrations)
-_For this, you need postgres installed in your PC/MAC. You can either use native software or [Docker image](https://hub.docker.com/_/postgres)_
+> _For this, you need postgres installed in your PC/MAC. You can either use native software or [Docker image](https://hub.docker.com/_/postgres)_
 ```sh
 $ py manage.py migrate
 ```
