@@ -12,10 +12,10 @@ chardet==3.0.4
 django==2.2.24
 djangorestframework==3.9.0
 pdfminer.six==20170720
-pillow==6.2.0
+pillow==9.0.1
 psycopg2==2.7.5
 pycryptodome==3.6.6
 python-dotenv==0.9.1
 pytz==2018.5
 six==1.11.0
-sqlparse==0.4.1; python_version >= '3.5'
+sqlparse==0.4.2; python_version >= '3.5'
